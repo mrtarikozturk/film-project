@@ -1,7 +1,7 @@
 # Film Application
 
 
-- Website - [Film Application](https://mrtarikozturk.github.io/hangman-game/)
+- Website - [Film Application](https://mrtarikozturk.github.io/film-project/)
 
 <!-- ![Project Image](project-image-url) -->
 
