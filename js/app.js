@@ -33,6 +33,8 @@ function addFilm(e){
         }
     }
 
+    const inputs = document. querySelectorAll('input');
+    ui.clearInputs(...inputs);
 
     e.preventDefault();
 }
