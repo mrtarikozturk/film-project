@@ -21,7 +21,7 @@ UI.prototype.displayMessage = function(type, message){
     setTimeout(() => {div.remove()}, 2000);
 }
 
-UI.prototype.addFilmToUI = function(newFilm){
+UI.prototype.add = function(newFilm){
 
    const filmList = document.querySelector('#films');
 
