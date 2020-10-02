@@ -21,6 +21,7 @@ UI.prototype.displayMessage = function(type, message){
     setTimeout(() => {div.remove()}, 2000);
 }
 
+// Add Film To UI
 UI.prototype.add = function(newFilm){
 
    const filmList = document.querySelector('#films');
@@ -46,3 +47,10 @@ filmList.appendChild(tr);
 ****************************************************/  
 }
 
+// Clear Inputs Value
+UI.prototype.clearInputs = function(element1, element2, element3){
+    element1.value = '';
+    element2.value = '';
+    element3.value = '';
+
+}
