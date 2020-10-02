@@ -24,7 +24,13 @@ function addFilm(e){
         ui.displayMessage('danger', 'Fill in the blanks...');
     } else {
         const newFilm = new Film(title, director, url);
-        ui.addFilmToUI(newFilm);
+        if(storage.add(newFilm)){
+            ui.add(newFilm);
+            ui.displayMessage('success', 'Film successfully added...');
+        }
+        else{            
+            ui.displayMessage('warning', 'Film already exists');
+        }
     }
 
 
