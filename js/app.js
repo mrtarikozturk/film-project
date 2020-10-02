@@ -10,6 +10,7 @@ eventListeners();
 
 function eventListeners(){
     form.addEventListener('submit', addFilm);
+    document.addEventListener('DOMContentLoaded', loadAllFilms);
 }
 
 ////// Functions //////
@@ -33,8 +34,14 @@ function addFilm(e){
         }
     }
 
+    // Clear All Inputs
     const inputs = document. querySelectorAll('input');
     ui.clearInputs(...inputs);
 
     e.preventDefault();
+}
+
+function loadAllFilms(){
+    let films = storage.get();
+    ui.loadAll(films);
 }
