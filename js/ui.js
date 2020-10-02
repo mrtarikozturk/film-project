@@ -54,3 +54,18 @@ UI.prototype.clearInputs = function(element1, element2, element3){
     element3.value = '';
 
 }
+
+// Clear Inputs Value Second Way
+/****************************************************
+ * Second way
+  UI.prototype.clearInputs = function(){
+    arguments[0].value = '';
+    arguments[1].value = '';
+    arguments[2].value = '';}
+****************************************************/
+
+UI.prototype.loadAll = function (films) {
+    films.forEach(film => {
+        this.add(film);
+    });
+}
