@@ -24,3 +24,10 @@ Storage.prototype.get = function(){
     return films;
 
 }
+
+Storage.prototype.delete = function (filmName) {
+    let films = this.get();
+    const index = films.findIndex(film => film.title === filmName);
+    films.splice(index, 1);
+    localStorage.setItem('films', JSON.stringify(films));
+}
