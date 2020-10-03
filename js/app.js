@@ -1,5 +1,11 @@
 // All elements
 const form = document.querySelector('#film-form');
+const secondCardBody = document. querySelectorAll('.card-body')[1];
+const clearAllButton = document.querySelector('#clear-films');
+
+
+
+
 
 // Objects
 const ui = new UI();
@@ -11,6 +17,8 @@ eventListeners();
 function eventListeners(){
     form.addEventListener('submit', addFilm);
     document.addEventListener('DOMContentLoaded', loadAllFilms);
+    secondCardBody.addEventListener('click', deleteFilm);
+        
 }
 
 ////// Functions //////
@@ -19,7 +27,6 @@ function addFilm(e){
     const title = document.querySelector('#title').value;
     const director = document.querySelector('#director').value;
     const url = document.querySelector('#url').value;
-    // const inputs = document.querySelectorAll('form input');
 
     if (title === '' || director === '' || url === '') {
         ui.displayMessage('danger', 'Fill in the blanks...');
@@ -43,5 +50,21 @@ function addFilm(e){
 
 function loadAllFilms(){
     let films = storage.get();
+    console.log(films);
     ui.loadAll(films);
 }
+
+function deleteFilm(e) {
+    if(e.target.id === 'delete-film'){
+
+        const filmElement = e.target.parentElement.parentElement;
+        ui.delete(filmElement);
+        console.log(filmElement);
+
+        const filmName = filmElement.children[1].textContent;
+        storage.delete(filmName);
+        console.log(filmName);
+        ui.displayMessage('success', 'Film successfully deleted...');
+    }
+}
+
