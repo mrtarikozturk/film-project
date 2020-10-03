@@ -19,8 +19,6 @@ function eventListeners(){
     document.addEventListener('DOMContentLoaded', loadAllFilms);
     secondCardBody.addEventListener('click', deleteFilm);
     clearAllButton.addEventListener('click', clearAllFilms);
-        
-        
 }
 
 ////// Functions //////
@@ -72,4 +70,5 @@ function clearAllFilms() {
         ui.clearAll();
         storage.clearAll();
     }
+    ui.messageBox('Filmler basari ile silindi.');
 }
