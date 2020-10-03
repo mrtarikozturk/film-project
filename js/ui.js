@@ -69,3 +69,7 @@ UI.prototype.loadAll = function (films) {
         this.add(film);
     });
 }
+
+UI.prototype.delete = function (filmElement) {
+    filmElement.remove();
+}
