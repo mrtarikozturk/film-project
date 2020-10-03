@@ -73,3 +73,16 @@ UI.prototype.loadAll = function (films) {
 UI.prototype.delete = function (filmElement) {
     filmElement.remove();
 }
+
+UI.prototype.clearAll = function () {
+    const filmElements = document.querySelector('#films');
+
+    while(filmElements.firstElementChild !== null){
+        filmElements.firstElementChild.remove();
+    }
+
+    // second way
+    // filmElements.innerHTML ='';
+    
+    
+}
